@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Garotas Palhaço</title>
+    <link rel="shortcut icon" href="https://pbs.twimg.com/media/F-vozSAWwAAiDxI?format=jpg&name=large" type="image/x-icon">
+    <style>
+        body {
+            background-color: #86001C; /* Cor de fundo vinho */
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+            color: #ffffff;
+        }
+
+        #aperteButton {
+            background-color: #ffbb0f; /* Cor de fundo do botão */
+            color: #000000;
+            padding: 10px 20px;
+            font-size: 18px;
+            cursor: pointer;
+            border: none;
+            margin-top: 20px;
+        }
+
+        img {
+            display: block;
+            margin: auto;
+            max-width: 100%;
+            height: auto;
+            display: none;
+        }
+
+        h1 {
+            color: #00e5f1;
+            text-align: center;
+            display: none;
+        }
+
+        h2 {
+            color: #ffbb0f;
+            text-align: center;
+            display: none;
+        }
+
+        p {
+            color: rgb(255, 255, 255);
+            display: none;
+        }
+
+        #audio-container {
+            display: none;
+        }
+
+        #muteButton {
+            background-color: #ffbb0f;
+            color: #000000;
+            padding: 10px 20px;
+            font-size: 18px;
+            cursor: pointer;
+            border: none;
+            margin-top: 20px;
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1 id="tituloInicial">Entre para saber o que te espera</h1>
+
+    <button id="aperteButton">Aperte</button>
+
+    <h1 id="conteudoOculto">Garotas Palhaço</h1>
+    <h2 id="conteudoOculto">Meu nome é Enias e estudo desde os 6 anos de idade....</h2>
+    <p id="conteudoOculto">EU QUERIA QUE GAROTAS PALHAÇO FOSSE UMA RAÇA REAL DE PESSOAS, A PELE INTEIRA DELAS É BRANCA, O NARIZ DE PALHAÇO É NATURAL, OS MAMILOS E OS LÁBIOS VAGINAIS, TAMBÉM CHAMADA DE PALHAXOTA, POSSUEM CORES ALTERNADAS, A PELE DELAS PROVAVELMENTE TEM UM GOSTO ENGRAÇADO, IMAGINE O SABOR DO LEITE MATERNO DELAS, APERTAR  OS PEITOS OU BUNDA DELAS CAUSAM UM SOM DE BUZINA, VOCÊ DÁ UMA PEGADA NA BUNDA DA SUA ESPOSA PALHAÇO EM PÚBLICO E UM PUTA BARULHO DE BUZINA ECOA DELA, ENTÃO TODO MUNDO OLHA PARA VOCÊS, SABENDO EXATAMENTE O QUE FIZERAM, E ELA TÍMIDAMENTE APERTA O SEU NARIZ, TENTANDO DISFARÇARRR
+    </p>
+    <img src="https://pbs.twimg.com/media/F-vozSAWwAAiDxI?format=jpg&name=large" alt="Garota PALHAXOTA" id="conteudoOculto">
+
+    <div id="audio-container" id="conteudoOculto">
+        <audio id="myAudio" loop>
+            <source
+                src="https://cdn.discordapp.com/attachments/1065715248230846576/1175228990546518077/Your_New_Home_128_kbps.mp3?ex=656a784a&is=6558034a&hm=99081f87e47fcc3e5ba3be00bb34dcc758ae2_c29855ee89b5fcf3965c3f39ddd&"
+                type="audio/mp3">
+            Seu navegador não suporta a tag de áudio.
+        </audio>
+    </div>
+
+    <button id="muteButton" id="conteudoOculto">Mudo</button>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var aperteButton = document.getElementById('aperteButton');
+            var audio = document.getElementById('myAudio');
+            var muteButton = document.getElementById('muteButton');
+            var conteudoOculto = document.querySelectorAll('#conteudoOculto');
+            var tituloInicial = document.getElementById('tituloInicial');
+
+            function toggleMute() {
+                audio.muted = !audio.muted;
+            }
+
+            function mostrarConteudo() {
+                tituloInicial.style.display = 'none';
+                aperteButton.style.display = 'none';
+                for (var i = 0; i < conteudoOculto.length; i++) {
+                    conteudoOculto[i].style.display = 'block';
+                }
+
+                audio.play().then(() => {
+                    document.getElementById('audio-container').style.display = 'block';
+                }).catch(error => {
+                    console.error('Erro ao reproduzir áudio:', error);
+                });
+
+                muteButton.style.display = 'block';
+            }
+
+            aperteButton.addEventListener('click', mostrarConteudo);
+            muteButton.addEventListener('click', toggleMute);
+        });
+    </script>
+
+</body>
+
+</html>
